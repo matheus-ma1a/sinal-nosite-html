@@ -24,7 +24,7 @@ firebaseConect()
 
 function login() {
     firebase.auth().signInWithEmailAndPassword(email.value, senha.value).then(res => {
-        window.location.href = '/index.html'
+        window.location.href = '/jogo.html'
     }).catch(error => {
         getErrorMessage(error);
     })

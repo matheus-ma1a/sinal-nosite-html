@@ -5,24 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Sitemina</title>
+    <title>Login | Sitemina </title>
+    <link rel="stylesheet" href="login.css">
+    <script defer src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+
+    <script defer src="registro.js"></script>
 </head>
 
-<body  >
-    <div class="main">
+<body>
+    <form>
 
-        <div class="modal">
-            
-        </div>
+        <label for="email">Email</label>
+        <input class="email" name="email" type="email" onchange="validar()" placeholder="seu@email.com">
 
-        <div  class="grid"></div>
+        <label for="">Senha</label>
+        <input class="senha" name="senha" type="password" onchange="validar()" placeholder="sua senha">
 
-        <button class="geraSinal" >gerar sinal</button>
+        <button class="recuperarSenha" disabled="true">Recuperar senha</button>
 
-    </div>
-    <!-- <iframe src="https://go.aff.afiliadoszep.bet/qkl2b1q8" frameborder="0"></iframe> -->
+        <button class="loginButton" disabled="true" type="submit">Entrar</button>
+
+        <button class="btn-registrar-form" type="submit">Registrar</button>
+
+    </form>
 </body>
 
 </html>
