@@ -4,12 +4,37 @@ let loginButton = document.querySelector(".loginButton")
 let recuperaSenha = document.querySelector('.recuperarSenha')
 
 
+    function firebaseConect(){
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAsgIan7t-_jJekU8XMZaDWHQ_syWNyCp0",
+            authDomain: "sinais-com-site.firebaseapp.com",
+            projectId: "sinais-com-site",
+            storageBucket: "sinais-com-site.appspot.com",
+            messagingSenderId: "40033951119",
+            appId: "1:40033951119:web:72574ef5fdd7f37e773ffa"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+        firebase.auth().signInWithEmailAndPassword('matheus@gmail.com', '123456').then(res => {
+            console.log('sucess', res);
+        }).catch(err => {
+            console.log(err);
+        })
+
+    }
+
+    firebaseConect()
+
 function validar() {
 
     const emailValido = email_Valida()
     recuperaSenha.disabled = !emailValido
 
-    if(!emailValido){
+    if (!emailValido) {
         alert('email invalido tente novamente')
     }
 
@@ -39,8 +64,10 @@ function validarEmail(email) {
     return emailPattern.test(email);
 }
 
-loginButton.addEventListener('click',(e)=>{
+loginButton.addEventListener('click', (e) => {
     e.preventDefault()
     window.location.href = '/index.html'
 })
+
+
 
