@@ -2,41 +2,45 @@ let email = document.querySelector(".email")
 let senha = document.querySelector(".senha")
 let loginButton = document.querySelector(".loginButton")
 let recuperaSenha = document.querySelector('.recuperarSenha')
+let registrarButton = document.querySelector('.btn-registrar-form')
 
 
-function firebaseConect() {
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyAsgIan7t-_jJekU8XMZaDWHQ_syWNyCp0",
-        authDomain: "sinais-com-site.firebaseapp.com",
-        projectId: "sinais-com-site",
-        storageBucket: "sinais-com-site.appspot.com",
-        messagingSenderId: "40033951119",
-        appId: "1:40033951119:web:72574ef5fdd7f37e773ffa"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-}
-
-firebaseConect()
 
 function login() {
     firebase.auth().signInWithEmailAndPassword(email.value, senha.value).then(res => {
         window.location.href = '/jogo.html'
     }).catch(error => {
-        getErrorMessage(error);
+
+        getErrorMessage(error)
+
     })
 
 }
 
-function getErrorMessage(error){
-    if (error.code == 'auth/user-not-found'){
-        return 'Usuario não encontrado, Faça o cadastro'
-    }
-    return error.message
+function recoverPassword() {
+    firebase.auth().sendPasswordResetEmail(email.value).then(() => {
+        alert('Email de recuperacao enviado com sucesso!')
+    }).catch((error) => {
+
+        getErrorMessage(error)
+
+    })
 }
+
+function getErrorMessage(error) {
+
+    if (error.code == 'auth/user-not-found') {
+        alert('Usuario nao encontrado, Faca o registro!')
+    }
+
+    if (error.code == 'auth/wrong-password') {
+        alert('Senha invalida')
+    }
+
+    return error.message
+
+}
+
 
 function validar() {
 
@@ -76,4 +80,15 @@ function validarEmail(email) {
 loginButton.addEventListener('click', (e) => {
     e.preventDefault()
     login()
+})
+
+recuperaSenha.addEventListener('click', (e) => {
+    e.preventDefault()
+    recoverPassword()
+})
+
+registrarButton.addEventListener('click',(e)=>{
+    e.preventDefault()
+    window.location.href = '/registro/registro.html'
+
 })
