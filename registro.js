@@ -4,30 +4,39 @@ let loginButton = document.querySelector(".loginButton")
 let recuperaSenha = document.querySelector('.recuperarSenha')
 
 
-    function firebaseConect(){
+function firebaseConect() {
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAsgIan7t-_jJekU8XMZaDWHQ_syWNyCp0",
-            authDomain: "sinais-com-site.firebaseapp.com",
-            projectId: "sinais-com-site",
-            storageBucket: "sinais-com-site.appspot.com",
-            messagingSenderId: "40033951119",
-            appId: "1:40033951119:web:72574ef5fdd7f37e773ffa"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAsgIan7t-_jJekU8XMZaDWHQ_syWNyCp0",
+        authDomain: "sinais-com-site.firebaseapp.com",
+        projectId: "sinais-com-site",
+        storageBucket: "sinais-com-site.appspot.com",
+        messagingSenderId: "40033951119",
+        appId: "1:40033951119:web:72574ef5fdd7f37e773ffa"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
+}
 
-        firebase.auth().signInWithEmailAndPassword('matheus@gmail.com', '123456').then(res => {
-            console.log('sucess', res);
-        }).catch(err => {
-            console.log(err);
-        })
+firebaseConect()
 
+function login() {
+    firebase.auth().signInWithEmailAndPassword(email.value, senha.value).then(res => {
+        window.location.href = '/index.html'
+    }).catch(error => {
+        getErrorMessage(error);
+    })
+
+}
+
+function getErrorMessage(error){
+    if (error.code == 'auth/user-not-found'){
+        return 'Usuario não encontrado, Faça o cadastro'
     }
-
-    firebaseConect()
+    return error.message
+}
 
 function validar() {
 
@@ -66,8 +75,5 @@ function validarEmail(email) {
 
 loginButton.addEventListener('click', (e) => {
     e.preventDefault()
-    window.location.href = '/index.html'
+    login()
 })
-
-
-
