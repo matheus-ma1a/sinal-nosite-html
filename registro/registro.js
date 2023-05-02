@@ -89,4 +89,3 @@ function registrar(){
         window.location.href = '../jogo.html'
     })
 }
-

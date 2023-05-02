@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    color: white ;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -19,25 +22,73 @@ iframe{
 .main{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    height: 65%;
-    background: rgb(89, 183, 219);
+    background: #212b66;
     position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.info-play{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.wapper-hora{
+    display: flex;
+    gap: 2px;
+}
+
+.wpper{
+    
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cardH{
+    border: solid 2px #0043e4 ;
+    width: 50px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.wpper-sinal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qtminas{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .grid{
     display: grid;
     grid-template-columns: 50px 50px 50px 50px 50px ;
     gap: 15px;
-    min-height: 300px;
-    margin: 0 50%;
+    min-height: 100px;
 }
 
 .card{
     height: 45px;
     width: 60px;
     position: relative;
+}
+
+.valido-ate{
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .face{
@@ -47,9 +98,9 @@ iframe{
 }
 
 .front{
-    background: linear-gradient(45deg, rgba(16,52,88,1) 35%, rgba(5,30,48,1) 100%);
+    background: linear-gradient(45deg, #0043e4 35%, rgb(21, 93, 145) 100%);
     border-radius: 5px;
-    border: solid 3px #00467c;
+    border: solid 1px #00467c;
     box-shadow: 0px 3px 0px 0px rgba(10,30,56,1);
     display: flex;
     justify-content: center;
@@ -58,28 +109,127 @@ iframe{
 }
 
 .back{
-    /* width: 100%; */
-    /* height: 100%; */
+
     background: linear-gradient(315deg, rgba(236,120,12,1) 9%, rgba(249,181,25,1) 61%);
     border-radius: 5px;
-    border: solid 3px #ed9a0f;
+    border: solid 1px #ed9a0f;
     box-shadow: 0px 3px 0px 0px #bf5c0c;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 button{
     bottom: 20px;
     height: 40px;
-    width: 150px;
+    width: 100px;
     border: 0;
     border-radius: 10px;
-    color: black;
+    color: white;
+    background-color: #05a532;
+    cursor: pointer;
+}
+
+.wapperBtn{
+    display: flex;
+    justify-content: space-around;
+    min-width: 500px;
     margin-top: 30px;
 }
 
 img{
     width: 20px;
+}
+
+@media screen and (max-width: 500px) {
+
+    .info-play{
+        margin-right: 15px;
+    }
+
+    .wpper{
+        padding: 0;
+        width: 100%;
+    }
+    
+    button{
+        margin-top: 10px;
+        bottom: 20px;
+        height: 40px;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+
+    }
+
+    .wapperBtn{
+        display: flex;
+        justify-content: space-evenly;
+        min-width: 400px;
+    }
+
+
+    .card{
+        height: 25px;
+        width: 35px;
+        position: relative;
+    }
+    
+    .grid{
+        display: grid;
+        grid-template-columns: 25px 25px 25px 25px 25px ;
+        gap: 12px;
+        min-height: 100px;
+    }
+
+    img{
+        width: 10px;
+    }
+
+    .cardH{
+        border: solid 2px #0043e4;
+        width: 40px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+    }
+    
+    .valido-ate{
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 1250px) {
+    .info-play{
+        margin-right: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+
+    .wapperBtn{
+        display: flex;
+        justify-content: space-evenly;
+        min-width: 200px;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    button{
+
+        height: 40px;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+
+    }
+    
+    .info-play{
+        margin-right: 0;
+    }
+
 }
