@@ -12,6 +12,8 @@ function firebaseConect() {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
+    
 }
+
 
 firebaseConect()

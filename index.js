@@ -8,7 +8,7 @@ let registrarButton = document.querySelector('.btn-registrar-form')
 
 function login() {
     firebase.auth().signInWithEmailAndPassword(email.value, senha.value).then(res => {
-        window.location.href = '/jogo.html'
+        window.location.href = '/jogo/jogo.html'
     }).catch(error => {
 
         getErrorMessage(error)
