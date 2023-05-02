@@ -5,6 +5,7 @@ const minutos = document.querySelector('.minutos')
 const wapper_hora = document.querySelector(".wapper-hora");
 const acessaBtn = document.querySelector(".acessarJogoBtn");
 const body = document.querySelector('body')
+const iframe = document.querySelector('iframe')
 
 
 
@@ -128,10 +129,8 @@ button.addEventListener('click', (e) => {
 acessaBtn.addEventListener('click',(e)=>{
     e.preventDefault()
 
-    const iframe = document.createElement('iframe')
     iframe.setAttribute('src','https://zep.bet/casino/spribe-mines')
     iframe.setAttribute('frameborder','0')
     iframe.setAttribute('sandbox','allow-same-origin allow-scripts allow-popups allow-forms')
-    body.appendChild(iframe)
-    console.log(iframe);
+
 })
