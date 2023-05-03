@@ -7,6 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 body{
     color: white;
     display: flex;
@@ -32,7 +33,7 @@ p{
     font-size: 18px;
 }
 
-button{
+.stylebtn{
     height: 45px;
     width: 350px;
     color: white;
@@ -41,6 +42,7 @@ button{
     border-radius: 5px;
     margin-top: 15px;
     cursor: pointer;
+    text-align: center;
 }
 
 .registrarBtn{
@@ -85,7 +87,7 @@ input{
         font-size: 1.5rem;
     }
     
-    button{
+    .stylebtn{
         font-size: 1.5rem;
         height: 65px;
         width: 70%;
