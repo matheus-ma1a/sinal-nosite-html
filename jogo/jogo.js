@@ -17,33 +17,34 @@ const circulosEstrelas = [
     '/imgs/circulo.svg front', '/imgs/star.svg back', '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/star.svg back',
 
     '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/star.svg back', '/imgs/circulo.svg front', '/imgs/circulo.svg front',
-    
+
     '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/star.svg back', '/imgs/circulo.svg front',
 ]
 
 
-function cronometro (){
-    const tempoTotal = 180;
-    
+function cronometro() {
+    const tempoTotal = 20;
+
     let tempoRestante = tempoTotal;
-    
+
     const atualizarContador = () => {
 
-      const minutos = Math.floor(tempoRestante / 60);
-      const segundos = tempoRestante % 60;
+        const minutos = Math.floor(tempoRestante / 60);
+        const segundos = tempoRestante % 60;
 
-      wapper_hora.innerHTML = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
+        wapper_hora.innerHTML = `${minutos.toString().padStart(2, "0")}:${segundos.toString().padStart(2, "0")}`;
 
-      tempoRestante--;
-    
-      if (tempoRestante < 0) {
-        clearInterval(intervalId);
-        wapper_hora.innerHTML = "00:00"; 
-      }
+        tempoRestante--;
+
+        if (tempoRestante < 0) {
+            clearInterval(intervalId);
+            wapper_hora.innerHTML = "00:00";
+            hadilitaBotao()
+        }
     };
-    
+
     const intervalId = setInterval(atualizarContador, 1000);
-    
+
 }
 
 function horasMinutos() {
@@ -66,26 +67,28 @@ const loadSinal = () => {
 
     grid.innerHTML = ''
 
-    setTimeout(() => {
-        circulosEstrelas.forEach((item, index) => {
 
-            const classname = arrayEmbaralhado[index].split(' ')
+    circulosEstrelas.forEach((item, index) => {
 
-            grid.innerHTML += `
+        const classname = arrayEmbaralhado[index].split(' ')
+
+        grid.innerHTML += `
             <div class="card">
             <div class="face ${classname[1]}" >
             <img src="${classname[0]}" >
             </div>
             </div>
             `
-        })
+    })
 
-    },)
+
 
 }
 
 const preLoad = () => {
     arrayPre = [...circulosEstrelas]
+
+    grid.innerHTML = ''
 
     arrayPre.forEach((item, index) => {
 
@@ -102,15 +105,15 @@ const preLoad = () => {
 
 preLoad()
 
-function hadilitaBotao(){
-    setTimeout(()=>{
+function hadilitaBotao() {
+    setTimeout(() => {
         button.removeAttribute("disabled")
         button.style.backgroundColor = '#05a532'
-
-    },180000)
+        preLoad()
+    }, )
 }
 
-function desabilitaBotao(){
+function desabilitaBotao() {
 
     button.setAttribute("disabled", "disabled");
     button.style.backgroundColor = '#C80505'
@@ -120,17 +123,15 @@ function desabilitaBotao(){
 button.addEventListener('click', (e) => {
     e.preventDefault()
     loadSinal()
-    cronometro ()
-    cronometro ()
+    cronometro()
     desabilitaBotao()
-    hadilitaBotao()
 })
 
-acessaBtn.addEventListener('click',(e)=>{
+acessaBtn.addEventListener('click', (e) => {
     e.preventDefault()
 
-    iframe.setAttribute('src','https://zep.bet/casino/spribe-mines')
-    iframe.setAttribute('frameborder','0')
-    iframe.setAttribute('sandbox','allow-same-origin allow-scripts allow-popups allow-forms')
+    iframe.setAttribute('src', 'https://zep.bet/casino/spribe-mines')
+    iframe.setAttribute('frameborder', '0')
+    iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
 
 })
