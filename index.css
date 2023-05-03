@@ -1,34 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
-    height: 100vh;
-    width: 100vw;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c1c1c1;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    background: #212b66;
 }
 
-form{
+div{
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    align-items: center;
 }
 
-input{
-    border-radius:  10px;
-    border: none;
-    padding: 15px;
+p{
+    font-size: 18px;
 }
 
 button{
-    border-radius:  10px;
-    height: 30px;
-    border: none;
-    width: 500px;
-    margin-top: 20px;
+    height: 35px;
+    width: 250px;
+    color: white;
+    background: #05a532;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.registrarBtn{
+    
+    background: #007de4;
+}
+
+.btn1{
+    opacity: 0.5;
+}
+.btn2{
+    opacity: 0.5;
+}
+
+input{
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    height: 35px;
+    width: 250px;
+    margin-top: 15px;
 }
