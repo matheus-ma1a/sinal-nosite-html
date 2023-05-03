@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: white ;
+    color: white;
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
 }
 
-iframe{
+iframe {
     width: 100%;
     height: 100%;
 }
 
-.main{
+.main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -30,28 +30,28 @@ iframe{
     padding-bottom: 20px;
 }
 
-.info-play{
+.info-play {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 100px;
 }
 
-.wapper-hora{
+.wapper-hora {
     display: flex;
     gap: 2px;
 }
 
-.wpper{
-    
+.wpper {
+
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.cardH{
-    border: solid 2px #0043e4 ;
+.cardH {
+    border: solid 2px #0043e4;
     width: 50px;
     height: 60px;
     display: flex;
@@ -61,56 +61,56 @@ iframe{
     font-weight: bold;
 }
 
-.wpper-sinal{
+.wpper-sinal {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.qtminas{
+.qtminas {
     margin-top: 10px;
     font-weight: bold;
     font-size: 18px;
 }
 
-.grid{
+.grid {
     display: grid;
-    grid-template-columns: 50px 50px 50px 50px 50px ;
+    grid-template-columns: 50px 50px 50px 50px 50px;
     gap: 15px;
     min-height: 100px;
 }
 
-.card{
+.card {
     height: 45px;
     width: 60px;
     position: relative;
 }
 
-.valido-ate{
+.valido-ate {
     font-weight: bold;
     font-size: 18px;
 }
 
-.face{
+.face {
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-.front{
+.front {
     background: linear-gradient(45deg, #0043e4 35%, rgb(21, 93, 145) 100%);
     border-radius: 5px;
     border: solid 1px #00467c;
-    box-shadow: 0px 3px 0px 0px rgba(10,30,56,1);
+    box-shadow: 0px 3px 0px 0px rgba(10, 30, 56, 1);
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.back{
+.back {
 
-    background: linear-gradient(315deg, rgba(236,120,12,1) 9%, rgba(249,181,25,1) 61%);
+    background: linear-gradient(315deg, rgba(236, 120, 12, 1) 9%, rgba(249, 181, 25, 1) 61%);
     border-radius: 5px;
     border: solid 1px #ed9a0f;
     box-shadow: 0px 3px 0px 0px #bf5c0c;
@@ -119,8 +119,7 @@ iframe{
     align-items: center;
 }
 
-button{
-    bottom: 20px;
+button {
     height: 40px;
     width: 100px;
     border: 0;
@@ -130,29 +129,29 @@ button{
     cursor: pointer;
 }
 
-.wapperBtn{
+.wapperBtn {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     min-width: 500px;
     margin-top: 30px;
 }
 
-img{
+img {
     width: 20px;
 }
 
 @media screen and (max-width: 500px) {
 
-    .info-play{
+    .info-play {
         margin-right: 15px;
     }
 
-    .wpper{
+    .wpper {
         padding: 0;
         width: 100%;
     }
-    
-    button{
+
+    button {
         margin-top: 10px;
         bottom: 20px;
         height: 40px;
@@ -162,31 +161,31 @@ img{
 
     }
 
-    .wapperBtn{
+    .wapperBtn {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         min-width: 400px;
     }
 
 
-    .card{
+    .card {
         height: 25px;
         width: 35px;
         position: relative;
     }
-    
-    .grid{
+
+    .grid {
         display: grid;
-        grid-template-columns: 25px 25px 25px 25px 25px ;
+        grid-template-columns: 25px 25px 25px 25px 25px;
         gap: 12px;
         min-height: 100px;
     }
 
-    img{
+    img {
         width: 10px;
     }
 
-    .cardH{
+    .cardH {
         border: solid 2px #0043e4;
         width: 40px;
         height: 50px;
@@ -195,40 +194,41 @@ img{
         align-items: center;
         font-size: 17px;
     }
-    
-    .valido-ate{
+
+    .valido-ate {
         font-size: 12px;
     }
-    
+
 }
 
 @media screen and (max-width: 1250px) {
-    .info-play{
+    .info-play {
         margin-right: 50px;
     }
-    
+
 }
 
 @media screen and (max-width: 400px) {
 
-    .wapperBtn{
+    .wapperBtn {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         min-width: 200px;
         gap: 10px;
         margin-top: 15px;
     }
 
-    button{
+    button {
 
-        height: 40px;
+        height: 30px;
+        width: 70px;
         border: 0;
         border-radius: 10px;
         color: white;
-
+        font-size: 10px;
     }
-    
-    .info-play{
+
+    .info-play {
         margin-right: 0;
     }
 

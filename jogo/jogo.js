@@ -1,5 +1,5 @@
 const grid = document.querySelector('.grid')
-const button = document.querySelector('.geraSinal')
+const geraSinal = document.querySelector('.geraSinal')
 const horas = document.querySelector('.horas')
 const minutos = document.querySelector('.minutos')
 const wapper_hora = document.querySelector(".wapper-hora");
@@ -107,25 +107,26 @@ preLoad()
 
 function hadilitaBotao() {
     setTimeout(() => {
-        button.removeAttribute("disabled")
-        button.style.backgroundColor = '#05a532'
+        geraSinal.removeAttribute("disabled")
+        geraSinal.style.backgroundColor = '#05a532'
         preLoad()
     }, )
 }
 
 function desabilitaBotao() {
 
-    button.setAttribute("disabled", "disabled");
-    button.style.backgroundColor = '#C80505'
-    button.textContent = 'SINAL HAKEADO'
+    geraSinal.setAttribute("disabled", "disabled");
+    geraSinal.style.backgroundColor = '#C80505'
+    geraSinal.textContent = 'SINAL HAKEADO'
 }
 
-button.addEventListener('click', (e) => {
+geraSinal.addEventListener('click', (e) => {
     e.preventDefault()
     loadSinal()
     cronometro()
     desabilitaBotao()
 })
+console.log(circulosEstrelas);
 
 acessaBtn.addEventListener('click', (e) => {
     e.preventDefault()
