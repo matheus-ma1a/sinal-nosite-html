@@ -162,8 +162,26 @@ img {
         border: 0;
         border-radius: 10px;
         color: white;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    .carregamento{
+        animation: is-rotating 1s infinite;
+        border: 3px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: #05a532;
+        height: 20px;
+        width: 20px;
+      }
+      
+      @keyframes is-rotating {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
 
     .wapperBtn {
         display: flex;

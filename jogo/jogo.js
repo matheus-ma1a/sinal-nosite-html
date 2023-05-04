@@ -4,6 +4,7 @@ const horas = document.querySelector('.horas')
 const minutos = document.querySelector('.minutos')
 const wapper_hora = document.querySelector(".wapper-hora");
 const acessaBtn = document.querySelector(".acessarJogoBtn");
+const textAcessaBtn = document.querySelector(".textAcessarbtn");
 const body = document.querySelector('body')
 const iframe = document.querySelector('iframe')
 
@@ -20,6 +21,21 @@ const circulosEstrelas = [
 
     '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/star.svg back', '/imgs/circulo.svg front',
 ]
+
+
+function animacaoDeCarregamento(){
+
+    const div = document.createElement('div')
+    div.className = 'carregamento'
+    textAcessaBtn.style.display = 'none'
+    acessaBtn.appendChild(div)
+    setTimeout(()=>{
+        textAcessaBtn.style.display = 'block'
+        div.className = ''
+    },5000)
+
+
+}
 
 
 function cronometro() {
@@ -130,7 +146,7 @@ geraSinal.addEventListener('click', (e) => {
 
 acessaBtn.addEventListener('click', (e) => {
     e.preventDefault()
-
+    animacaoDeCarregamento()
     iframe.setAttribute('src', 'https://zep.bet/casino/spribe-mines')
     iframe.setAttribute('frameborder', '0')
     iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
