@@ -37,9 +37,8 @@ function animacaoDeCarregamento(){
 
 }
 
-
 function cronometro() {
-    const tempoTotal = 20;
+    const tempoTotal = 180;
     
     let tempoRestante = tempoTotal;
     
@@ -121,11 +120,11 @@ const preLoad = () => {
 
 preLoad()
 
-
 function hadilitaBotao() {
     setTimeout(() => {
         geraSinal.removeAttribute("disabled")
         geraSinal.style.backgroundColor = '#05a532'
+        geraSinal.innerHTML = 'HACKER SINAL'
         preLoad()
     }, )
 }
