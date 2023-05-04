@@ -24,11 +24,11 @@ const circulosEstrelas = [
 
 function cronometro() {
     const tempoTotal = 20;
-
+    
     let tempoRestante = tempoTotal;
-
+    
     const atualizarContador = () => {
-
+        
         const minutos = Math.floor(tempoRestante / 60);
         const segundos = tempoRestante % 60;
 
@@ -63,36 +63,36 @@ function horasMinutos() {
 }
 
 const loadSinal = () => {
-    const arrayEmbaralhado = circulosEstrelas.sort(() => Math.random() - 0.5)
-
+    const arrayfixo = [...circulosEstrelas]
+    
+    const arrayEmbaralhado = arrayfixo.sort(() => Math.random() - 0.5)
+    
     grid.innerHTML = ''
-
-
-    circulosEstrelas.forEach((item, index) => {
-
+    
+    arrayfixo.forEach((item, index) => {
+        
         const classname = arrayEmbaralhado[index].split(' ')
-
+        
         grid.innerHTML += `
-            <div class="card">
-            <div class="face ${classname[1]}" >
-            <img src="${classname[0]}" >
-            </div>
-            </div>
-            `
+        <div class="card">
+        <div class="face ${classname[1]}" >
+        <img src="${classname[0]}" >
+        </div>
+        </div>
+        `
     })
-
-
-
+    
+    
+    
 }
 
 const preLoad = () => {
-    arrayPre = [...circulosEstrelas]
-
+    
     grid.innerHTML = ''
 
-    arrayPre.forEach((item, index) => {
+    circulosEstrelas.forEach((item, index) => {
 
-        const classname = arrayPre[0].split(' ')
+        const classname = circulosEstrelas[0].split(' ')
 
         grid.innerHTML += `
         <div class="card">
@@ -104,6 +104,7 @@ const preLoad = () => {
 }
 
 preLoad()
+
 
 function hadilitaBotao() {
     setTimeout(() => {
@@ -126,7 +127,6 @@ geraSinal.addEventListener('click', (e) => {
     cronometro()
     desabilitaBotao()
 })
-console.log(circulosEstrelas);
 
 acessaBtn.addEventListener('click', (e) => {
     e.preventDefault()
