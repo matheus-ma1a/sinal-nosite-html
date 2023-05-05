@@ -34,7 +34,6 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 100px;
 }
 
 .wapper-hora {
@@ -44,7 +43,6 @@ iframe {
 
 .wpper {
 
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -122,7 +120,7 @@ button {
     height: 40px;
     width: 100px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 6px;
     color: white;
     background-color: #05a532;
     cursor: pointer;
@@ -136,8 +134,8 @@ button {
     border: 3px solid #ffffff;
     border-radius: 50%;
     border-top-color: #05a532;
-    height: 20px;
-    width: 20px;
+    height: 35px;
+    width: 35px;
   }
   
   @keyframes is-rotating {
@@ -165,7 +163,22 @@ img {
  @media screen and (max-width: 600px) {
     .main{
         width: 100%;
-        background: #000;
+
+    }
+
+    .front{
+        border-radius: 1px;
+        box-shadow: 0px 1px 0px 0px rgba(10, 30, 56, 1);
+    }
+    
+    .back{
+        border-radius: 1px;
+        box-shadow: 0px 1px 0px 0px rgba(10, 30, 56, 1);
+    }
+
+    .carregamento{
+        height: 20px;
+        width: 20px;
     }
 
     .card {
@@ -209,39 +222,108 @@ img {
 
 }
 
-/*@media screen and (max-width: 1250px) {
-    .info-play {
-        margin-right: 50px;
+@media screen and (min-width: 600px) and (max-width: 992px) {
+
+
+    .wpper{
+        width: 100%;
     }
 
-}
-
-@media screen and (max-width: 400px) {
-
-    .wapperBtn {
-        display: flex;
-        justify-content: center;
-        width: 200px;
+    .grid{
         gap: 10px;
-        margin-top: 15px;
+    }
+
+    .wapperBtn{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+
+    button{
+        width: 150px;
+        height: 50px;
+        border-radius: 6px;
+        font-size: 18px;
     }
 
     .geraSinal{
-        margin-right: 15px;
+        margin: 0;
     }
 
-    button {
+    .qtminas, .tentativas, .valido-ate, .wapper-hora {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
+}
 
-        height: 30px;
-        width: 70px;
-        border: 0;
-        border-radius: 10px;
-        color: white;
-        font-size: 10px;
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+    button{
+        width: 150px;
+        height: 50px;
+        border-radius: 6px;
+        font-size: 18px;
     }
 
-    .info-play {
-        margin-right: 0;
+    .wpper{
+        width: 100%;
     }
 
-} */
+    .grid{
+        gap: 10px;
+    }
+
+    .geraSinal{
+        margin: 0;
+    }
+
+    .wapperBtn{
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    
+    .qtminas, .tentativas, .valido-ate, .wapper-hora {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    button{
+        width: 150px;
+        height: 50px;
+        border-radius: 6px;
+        font-size: 18px;
+    }
+
+    .wpper{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .grid{
+        gap: 10px;
+    }
+
+    .geraSinal{
+        margin: 0;
+    }
+
+    .wapperBtn{
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    
+    .qtminas, .tentativas, .valido-ate, .wapper-hora {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .info-play{
+        margin-right: 200px;
+    }
+
+}

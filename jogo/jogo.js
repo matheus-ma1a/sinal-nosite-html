@@ -8,8 +8,6 @@ const textAcessaBtn = document.querySelector(".textAcessarbtn");
 const body = document.querySelector('body')
 const iframe = document.querySelector('iframe')
 
-
-
 const circulosEstrelas = [
     '/imgs/circulo.svg front', '/imgs/circulo.svg front', '/imgs/star.svg back', '/imgs/circulo.svg front', '/imgs/circulo.svg front',
 
