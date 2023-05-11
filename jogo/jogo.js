@@ -144,7 +144,7 @@ geraSinal.addEventListener('click', (e) => {
 acessaBtn.addEventListener('click', (e) => {
     e.preventDefault()
     animacaoDeCarregamento()
-    iframe.setAttribute('src', 'https://zep.bet/casino/spribe-mines')
+    iframe.setAttribute('src', 'https://go.aff.afiliadoszep.bet/nwqi44vj?utm_campaign=appminedireta')
     iframe.setAttribute('frameborder', '0')
     iframe.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms')
 

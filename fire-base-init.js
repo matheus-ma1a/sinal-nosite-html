@@ -27,8 +27,6 @@ registrarBtn.addEventListener('click', (e) => {
 
 })
 
-console.log('log fora ', Btn2.disabled);
-
 Btn2.addEventListener('click', (e) => {
     e.preventDefault()
     window.location.href = '/jogo/jogo.html'
@@ -52,7 +50,6 @@ function validar() {
         console.log("email valido")
     } else {
         console.log("email invalido")
-
     }
 
 }

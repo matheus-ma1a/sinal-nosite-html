@@ -8,24 +8,53 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
+.entreNoJogo {
+
+    margin-top: 10px;
+}
+
 body {
     width: 100vw;
-    height: 100vh;
     overflow-x: hidden;
 }
 
-iframe {
-    width: 100%;
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #212425;
     height: 100%;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+}
+
+iframe {
+    z-index: 1;
+    width: 95%;
+    height: 80vh;
+}
+
+.ifrmeWapper {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    background: #0063d4;
+    padding-bottom: 20px;
+    border-radius: 0 0 15px 15px;
 }
 
 .main {
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: #212b66;
+    background: #0063d4;
     position: relative;
+    border-radius: 15px 15px 0 0;
     padding: 20px;
 
 }
@@ -36,13 +65,19 @@ iframe {
     align-items: center;
 }
 
+.bombaBg{
+    top: -13px;
+    left: 101px;
+    position: absolute;
+    width: 744px;
+}
+
 .wapper-hora {
     display: flex;
     gap: 2px;
 }
 
 .wpper {
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -97,7 +132,7 @@ iframe {
 .front {
     background: linear-gradient(45deg, #0043e4 35%, rgb(21, 93, 145) 100%);
     border-radius: 5px;
-    border: solid 1px #00467c;
+    border: solid 1px #00335a;
     box-shadow: 0px 3px 0px 0px rgba(10, 30, 56, 1);
     display: flex;
     justify-content: center;
@@ -129,20 +164,20 @@ button {
     align-items: center;
 }
 
-.carregamento{
+.carregamento {
     animation: is-rotating 1s infinite;
     border: 3px solid #ffffff;
     border-radius: 50%;
     border-top-color: #05a532;
     height: 35px;
     width: 35px;
-  }
-  
-  @keyframes is-rotating {
+}
+
+@keyframes is-rotating {
     to {
-      transform: rotate(1turn);
+        transform: rotate(1turn);
     }
-  }
+}
 
 .wapperBtn {
     display: flex;
@@ -150,7 +185,7 @@ button {
     margin-top: 30px;
 }
 
-.geraSinal{
+.geraSinal {
     margin-right: 50px;
 }
 
@@ -158,25 +193,40 @@ img {
     width: 20px;
 }
 
+p{
+    z-index: 1;
+}
+
 /* ---------------------------------- responsividade-------------------------------------------------- */
 
- @media screen and (max-width: 600px) {
-    .main{
-        width: 100%;
+@media screen and (max-width: 600px) {
 
+    .starBg{
+        top: 115px;
+        left: 49px;
+        position: absolute;
+        width: 79px;
     }
 
-    .front{
+
+    .bombaBg{
+        top: 3px;
+        left: 11px;
+        position: absolute;
+        width: 96px;
+    }
+
+    .front {
         border-radius: 1px;
         box-shadow: 0px 1px 0px 0px rgba(10, 30, 56, 1);
     }
-    
-    .back{
+
+    .back {
         border-radius: 1px;
         box-shadow: 0px 1px 0px 0px rgba(10, 30, 56, 1);
     }
 
-    .carregamento{
+    .carregamento {
         height: 20px;
         width: 20px;
     }
@@ -193,29 +243,29 @@ img {
         gap: 5px;
     }
 
-    img{
+    img {
         width: 12px;
     }
 
-    .wapperBtn{
+    .wapperBtn {
         margin-top: 20px;
     }
 
-    button{
+    button {
         height: 30px;
         width: 70px;
         font-size: 10px;
     }
 
-    .geraSinal{
+    .geraSinal {
         margin-right: 15px;
     }
 
-    .info-play{
+    .info-play {
         height: inherit;
     }
 
-    .wpper{
+    .wpper {
         width: 100%;
         justify-content: space-around;
     }
@@ -224,105 +274,130 @@ img {
 
 @media screen and (min-width: 600px) and (max-width: 992px) {
 
+    .starBg{
+        top: 174px;
+        left: 190px;
+        position: absolute;
+        width: 203px;
+    
+    }
 
-    .wpper{
+
+    .bombaBg{
+        top: 3px;
+        left: 11px;
+        position: absolute;
+        width: 237px;
+    }
+
+
+    .wpper {
         width: 100%;
     }
 
-    .grid{
+    .grid {
         gap: 10px;
     }
 
-    .wapperBtn{
+    .wapperBtn {
         width: 100%;
         justify-content: space-around;
     }
 
 
-    button{
+    button {
         width: 150px;
         height: 50px;
         border-radius: 6px;
         font-size: 18px;
     }
 
-    .geraSinal{
+    .geraSinal {
         margin: 0;
     }
 
-    .qtminas, .tentativas, .valido-ate, .wapper-hora {
+    .qtminas,
+    .tentativas,
+    .valido-ate,
+    .wapper-hora {
         font-size: 2rem;
         font-weight: bold;
     }
-    
+
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 
-    button{
+    button {
         width: 150px;
         height: 50px;
         border-radius: 6px;
         font-size: 18px;
     }
 
-    .wpper{
+    .wpper {
         width: 100%;
     }
 
-    .grid{
+    .grid {
         gap: 10px;
     }
 
-    .geraSinal{
+    .geraSinal {
         margin: 0;
     }
 
-    .wapperBtn{
+    .wapperBtn {
         width: 100%;
         justify-content: space-around;
     }
-    
-    
-    .qtminas, .tentativas, .valido-ate, .wapper-hora {
+
+
+    .qtminas,
+    .tentativas,
+    .valido-ate,
+    .wapper-hora {
         font-size: 2rem;
         font-weight: bold;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    button{
+    button {
         width: 150px;
         height: 50px;
         border-radius: 6px;
         font-size: 18px;
     }
 
-    .wpper{
+    .wpper {
         justify-content: center;
         width: 100%;
     }
 
-    .grid{
+    .grid {
         gap: 10px;
     }
 
-    .geraSinal{
+    .geraSinal {
         margin: 0;
     }
 
-    .wapperBtn{
+    .wapperBtn {
         width: 100%;
         justify-content: space-around;
     }
-    
-    
-    .qtminas, .tentativas, .valido-ate, .wapper-hora {
+
+
+    .qtminas,
+    .tentativas,
+    .valido-ate,
+    .wapper-hora {
         font-size: 2rem;
         font-weight: bold;
     }
 
-    .info-play{
+    .info-play {
         margin-right: 200px;
     }
 
