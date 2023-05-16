@@ -26,23 +26,21 @@ registrarBtn.addEventListener('click', (e) => {
     validar()
 })
 
-Btn2.addEventListener('click', (e) => {
-    e.preventDefault()
-    window.location.href = '/jogo/jogo.html'
-})
+// Btn2.addEventListener('click', (e) => {
+//     e.preventDefault()
+//     window.location.href = '/jogo/jogo.html'
+// })
 
-Btn1.addEventListener('click', (e) => {
-    e.preventDefault()
-    window.location.href = '/jogo/jogo.html'
-})
-
-function validar() {
-
-    if (validarEmail(email.value)) {
-        Btn1.disabled = false
-        Btn1.style.opacity = '1'
-        Btn2.disabled = false
-        Btn2.style.opacity = '1'
+// Btn1.addEventListener('click', (e) => {
+    //     e.preventDefault()
+    //     window.location.href = '/jogo/jogo.html'
+    // })
+    
+    function validar() {
+        
+        if (validarEmail(email.value)) {
+            
+        window.location.href = './home/Dashboard.html'
         email.style.display = 'none'
         registrarBtn.style.display = 'none'
         insereDocumento(email.value)
