@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 15px;
+}
+
+body {
+    width: 100Vw;
+    height: 100vh;
+    background-color: #212425;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.myButton2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 85%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #0063d4;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.contentsinalEBotons {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.textAcessarbtn{
+    font-size: 11px;
+}
+
+.infoEntrada{
+    font-size: 16px;
+}
+
+.envolvetx{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 120px;
+}
+
+.carregamento {
+    animation: is-rotating 1s infinite;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: #05a532;
+    height: 25px;
+    width: 25px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #30B309;
+    height: 35px;
+    width: 75px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.wapperBtn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.bandeiras {
+    width: 60px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.iframe {
+    width: 95%;
+    height: 95%;
+}
+
+iframe {
+
+    width: 100%;
+    height: 100%;
+}
+
+.div6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white !important;
+}
+
+.gap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.grid {
+    margin: 35px;
+    display: flex;
+    gap: 5px;
+}
+
+.contetnSinal {
+    display: flex;
+    gap: 5px;
+
+}
+
+.card {
+    width: 50px;
+    height: 50px;
+    background-color: #FF2519;
+}
+
+.bola {
+    width: 50px;
+    height: 50px;
+    background-image: url('./bola.png');
+    background-size: cover;
+}

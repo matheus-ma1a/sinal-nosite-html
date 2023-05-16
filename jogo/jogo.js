@@ -32,7 +32,6 @@ function animacaoDeCarregamento(){
         div.className = ''
     },5000)
 
-
 }
 
 function cronometro() {
