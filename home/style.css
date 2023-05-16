@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212425;
+}
+
+ul{
+    display: flex;
+    gap: 5px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 95%;
+    background: #0063d4;
+    border-radius: 15px;
+}
+
+li :hover{
+    opacity: 0.6;
+    scale: 0.9;
+    cursor: pointer;
+}
+
+img{
+    border: rgb(0, 10, 31) 2px solid ;
+    width: 100px;
+    border-radius: 5px;
+}

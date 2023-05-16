@@ -24,7 +24,6 @@ const minhacolecao = collection(db, 'emails')
 registrarBtn.addEventListener('click', (e) => {
     e.preventDefault()
     validar()
-
 })
 
 Btn2.addEventListener('click', (e) => {
