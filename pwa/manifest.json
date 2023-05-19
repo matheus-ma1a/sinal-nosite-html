@@ -4,6 +4,7 @@
     "display": "standalone",
     "lang": "pt-br",
     "scope": "/",
+    "orientation": "portrait",
     "start_url": "/",
     "name": "Hacker Da Casa",
     "short_name": "Hackredacasa.online",

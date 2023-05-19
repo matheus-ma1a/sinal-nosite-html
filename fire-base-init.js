@@ -26,23 +26,23 @@ registrarBtn.addEventListener('click', (e) => {
 function insereUsuarioNaPlanilha(email) {
 
     console.log('dentro do fetch'),
-    fetch('https://api.sheetmonkey.io/form/qYWn6XeuNdnJXic3YveDfH', {
+        fetch('https://api.sheetmonkey.io/form/qYWn6XeuNdnJXic3YveDfH', {
 
 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({email: email}),
-    }).then((result) => {
-        window.location.href = './home/Dashboard.html'
-    });
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email }),
+        }).then((result) => {
+            window.location.href = './home/Dashboard.html'
+        });
 }
 
 function validar() {
 
     if (validarEmail(email.value)) {
-        
+
         insereUsuarioNaPlanilha(email.value)
         console.log("email valido")
         error.style.opacity = '0'
@@ -64,3 +64,14 @@ function validarEmail(email) {
 //     await addDoc(minhacolecao, { email: email })
 // }
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./pwa/service-worker.js', { scope: '/' }).then(function (registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
