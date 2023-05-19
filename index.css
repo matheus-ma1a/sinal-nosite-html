@@ -7,6 +7,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.error{
+    background-color: red;
+    height: 40px;
+    width: 100%;
+    border-radius: 0 0 5px 5px   ;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s ;
+    opacity: 0;
+    display: none;
+}
+
+
+.form{
+    width: 100%;
+}
 
 body{
     color: white;
@@ -67,6 +83,11 @@ input{
 }
 
 @media screen and (min-width: 768px) {
+
+    .error{
+        width: 70%;
+    }
+
     p{
         font-size: 2rem;
     }
@@ -108,6 +129,10 @@ input{
             width: 50%;
             margin-top: 15px;
             font-size: 1.5rem;
+        }
+
+        .error{
+            width: 50%;
         }
         
         .stylebtn{

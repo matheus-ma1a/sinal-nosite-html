@@ -1,52 +1,55 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import { getFirestore, doc, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+// import { getFirestore, doc, collection, addDoc, query, where, getDocs} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 
-const firebaseApp = initializeApp({
-    apiKey: "AIzaSyAsgIan7t-_jJekU8XMZaDWHQ_syWNyCp0",
-    authDomain: "sinais-com-site.firebaseapp.com",
-    projectId: "sinais-com-site",
-    storageBucket: "sinais-com-site.appspot.com",
-    messagingSenderId: "40033951119",
-    appId: "1:40033951119:web:72574ef5fdd7f37e773ffa"
-})
+// const firebaseApp = initializeApp({
+//     apiKey: "AIzaSyAsgIan7t-_jJekU8XMZaDWHQ_syWNyCp0",
+//     authDomain: "sinais-com-site.firebaseapp.com",
+//     projectId: "sinais-com-site",
+//     storageBucket: "sinais-com-site.appspot.com",
+//     messagingSenderId: "40033951119",
+//     appId: "1:40033951119:web:72574ef5fdd7f37e773ffa"
+// })
+// const db = getFirestore(firebaseApp)
+// const minhacolecao = collection(db, 'emails')
 
 const registrarBtn = document.querySelector('.registrarBtn')
-const Btn1 = document.querySelector('.btn1')
-const Btn2 = document.querySelector('.btn2')
 const email = document.querySelector('input')
+const error = document.querySelector('.error')
 
-const auth = getAuth(firebaseApp)
-const db = getFirestore(firebaseApp)
-const documento = doc(db, 'emails/usuario')
-const minhacolecao = collection(db, 'emails')
+
 
 registrarBtn.addEventListener('click', (e) => {
     e.preventDefault()
     validar()
 })
 
-// Btn2.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     window.location.href = '/jogo/jogo.html'
-// })
+function insereUsuarioNaPlanilha(email) {
 
-// Btn1.addEventListener('click', (e) => {
-    //     e.preventDefault()
-    //     window.location.href = '/jogo/jogo.html'
-    // })
-    
-    function validar() {
-        
-        if (validarEmail(email.value)) {
-            
+    console.log('dentro do fetch'),
+    fetch('https://api.sheetmonkey.io/form/qYWn6XeuNdnJXic3YveDfH', {
+
+
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email: email}),
+    }).then((result) => {
         window.location.href = './home/Dashboard.html'
-        email.style.display = 'none'
-        registrarBtn.style.display = 'none'
-        insereDocumento(email.value)
+    });
+}
+
+function validar() {
+
+    if (validarEmail(email.value)) {
+        
+        insereUsuarioNaPlanilha(email.value)
         console.log("email valido")
+        error.style.opacity = '0'
+        error.style.display = 'none'
     } else {
-        console.log("email invalido")
+        error.style.opacity = '1'
+        error.style.display = 'flex'
     }
 
 }
@@ -57,14 +60,7 @@ function validarEmail(email) {
     return emailPattern.test(email);
 }
 
-async function insereDocumento(email) {
-    await addDoc(minhacolecao, { email: email })
-}
+// async function insereDocumento(email) {
+//     await addDoc(minhacolecao, { email: email })
+// }
 
-// onAuthStateChanged(auth, (user)=>{
-//     if(user != null) {
-//         console.log('sem usuario');
-//     }else{
-//     console.log('nao logado');
-//     }
-// })
